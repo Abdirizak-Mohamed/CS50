@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+
+          <input type="text" name="name">
+
+          <input type="radio" name="position" value="lines" checked> Lines
+          <input type="radio" name="position" value="sentences"> Sentences
+          <input type="radio" name="position" value="substrings"> Substrings
+          <br>
+          <select name="office">
+            <option disabled selected value="">Office</option>
+            <option value="Apley Court">Apley Court</option>
+            <option value="Canaday">Canaday</option>
+            <option value="Grays">Grays</option>
+          </select>
+        <br>
+        <input type="number" name="age">
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+ document.querySelector('form').onsubmit = function() {
+            if (!document.querySelector(('[name="name"]')).value) {
+                alert('You must provide your name!');
+                return false;
+            }
+            else if (!document.querySelector(('[name="position"]')).value) {
+                alert('You must provide your position!');
+                return false;
+            }
+            else if (!document.querySelector(('[name="office"]')).value) {
+                alert('You must provide your office!');
+                return false;
+            }
+            else if (!document.querySelector(('[name="age"]')).value) {
+                alert('You must provide your age!');
+                return false;
+            }
+            return true;
+        };
+
+
+    </script>
+
+{% endblock %}

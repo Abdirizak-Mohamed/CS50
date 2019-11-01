@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<table id="survey" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in surveys %}
+            <tr>
+              <td> {{ i[0] }}</td>
+              <td> {{ i[1] }}</td>
+              <td> {{ i[2] }}</td>
+              <td> {{ i[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+{% endblock %}
